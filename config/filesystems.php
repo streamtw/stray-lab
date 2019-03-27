@@ -43,6 +43,11 @@ return [
 
     'disks' => [
 
+        'dataset' => [
+            'driver' => 'local',
+            'root' => storage_path('dataset'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
