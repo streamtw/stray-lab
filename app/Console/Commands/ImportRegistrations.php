@@ -42,6 +42,7 @@ class ImportRegistrations extends Command
     public function handle()
     {
         $files = Storage::disk('dataset')->files('business-registrations');
+
         foreach ($files as $excelName) {
             $this->output->title('開始匯入：' . $excelName);
             (new RegistrationsImport)->withOutput($this->output)->import($excelName, 'dataset');
