@@ -12,3 +12,31 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.night {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000033;
+}
+
+.ground {
+  background-color: #443300;
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+}
+
+.street {
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+  background-color: gray;
+}
+
+.building {
+
+}
