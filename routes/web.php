@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('map', function () {
+    $stores = \App\Store::where('status', 1)->get();
+
+    return view('map')->withStores(json_encode($stores));
+});
