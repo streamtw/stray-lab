@@ -30,14 +30,22 @@
           zoom: 8
         });
 
-        stores.forEach(function (store) {
-          new google.maps.Marker({
-            position: { lat: parseFloat(store.latitude), lng: parseFloat(store.longitude) }, map: map
-          });
-        })
+        // stores.forEach(function (store) {
+        //   new google.maps.Marker({
+        //     position: { lat: parseFloat(store.latitude), lng: parseFloat(store.longitude) }, map: map
+        //   });
+        // })
+
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+          map: map,
+          data: stores.map(function (store) {
+            return new google.maps.LatLng(parseFloat(store.latitude), parseFloat(store.longitude))
+          }),
+          radius: 25
+        });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_API_KEY')}}&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_API_KEY')}}&callback=initMap&libraries=visualization"
     async defer></script>
   </body>
 </html>
