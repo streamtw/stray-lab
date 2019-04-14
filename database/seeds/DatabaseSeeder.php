@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
 
         // 從商業登記資料過濾重複資料並建立寵物店
         $this->call(CreateFilteredStores::class);
+
+        // 匯入動物認領養資料集
+        $this->call(ImportAdoptions::class);
     }
 }
